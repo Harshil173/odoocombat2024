@@ -1,10 +1,33 @@
 // src/Home.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
+import makeRequest from '../../Helpers/makeRequest';
+import Card from './Card/Card';
 
 const Home = () => {
+
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await makeRequest("get", '/api/allAds');
+        setData(response.data);
+      } catch (err) {
+        setError(err);
+        console.error(err);
+      }
+    };
+    fetchData();
+  }, []);
+
+  if (error) {
+    return <div>Error loading data</div>;
+  }
+
   return (
-    <div className="home-container">
+    <div style={{padding: "0 14%"}} className="home-container">
       <img
         src="/images/banner.png" 
         alt="Header"
@@ -33,6 +56,11 @@ const Home = () => {
           />
           Location</div> 
         <div id='sameid'>Pricing</div>  
+      </div>
+      <div style={{display:"flex", flexDirection: "row", flexWrap: "wrap", alignItems: "flex-start"}}>
+        {data.map((item) => (
+          <Card data={item}></Card>
+        ))}
       </div>
     </div>
   );
