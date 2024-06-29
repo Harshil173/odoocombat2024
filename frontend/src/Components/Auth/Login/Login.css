@@ -5,7 +5,6 @@ body{
     align-items: center;
     height: 620px;
     overflow: hidden;
-    margin-left: 120px;
 }
 .login-container{
     width: 734px;
@@ -14,8 +13,11 @@ body{
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+    border: 1px solid grey;
+    border-radius: 5px 5px 0 0;
 }
 .login-form{
+    margin-left: 120px;
     width: 100%;
     display: flex;
     flex-flow: column wrap;
