@@ -25,6 +25,7 @@ const Login = () => {
 };
 
   return (
+    <div className='parent-container' >
     <div className='login-container'>
       <form onSubmit={handleSubmit} className='login-form'>
         <pre id='firsttext'>Login for OOH</pre>
@@ -46,6 +47,7 @@ const Login = () => {
           />
         <button type="submit" style={{ marginTop: '20px' }}>Login</button>
       </form>
+    </div>
     </div>
   );
 };
