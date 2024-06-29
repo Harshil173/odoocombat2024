@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqDJHPOX80IiEbAcfNnvToHdHQqbpeqMHI3A&s" 
+        src="/images/banner.png" 
         alt="Header"
         className="header-image"
       />
