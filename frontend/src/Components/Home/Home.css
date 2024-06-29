@@ -30,15 +30,21 @@
   }
   
   #sameid {
-    width: 140px;
-    height: 35px;
-    text-align: center;
+    width: 130px;
+    padding: 10px;
     border-radius: 15px;
     background-color: #E9E8FC;
-    border: 1px solid #E9E8FC;
-    color :#605DEC
+    color: #605DEC;
   }
   
+  #diffid{
+    width: 160px;
+    padding: 10px;
+    height: 17px;
+    border-radius: 15px;
+    background-color: #E9E8FC;
+    color: #605DEC;
+  }
   .cards-container {
     display: flex;
     justify-content: space-around;
