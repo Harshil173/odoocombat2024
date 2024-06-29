@@ -8,8 +8,8 @@
   }
   
   .header-image {
-    width: 1200px;
-    height: 270px;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
   }
   
