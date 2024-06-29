@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require("./helper/passport");
 const authRoutes = require("./routes/authRoutes");
+const apiRoutes = require("./routes/apiRoutes")
 
 const app = express()
 app.set("view engine", "ejs");
@@ -28,6 +29,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 dotenv.config();
 app.use(cors({ origin: "http://localhost:3001", credentials: true }))
 
@@ -49,7 +51,8 @@ app.listen(port, function (){
 })
 
 app.get("/", function(req, res){
-    res.render("home", {appTitle: "hello tffhere"});
+    res.render("home", {appTitle: "hello there"});
 })
 
 app.use("/auth", authRoutes);
+app.use("/api", apiRoutes);
