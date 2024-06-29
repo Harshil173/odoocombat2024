@@ -27,7 +27,7 @@ const Home = () => {
   }
 
   return (
-    <div style={{padding: "0 14%"}} className="home-container">
+    <div style={{padding: "0 2%"}} className="home-container">
       <img
         src="/images/banner.png" 
         alt="Header"
